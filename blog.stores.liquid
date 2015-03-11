@@ -1,0 +1,40 @@
+{% paginate blog.articles by blog.articles_count %}
+<div class="rte stores">
+	<div class="store-search">
+		<div class="left">
+			<h1>store locator</h1>
+			<label>search by zip code:</label>
+			<div class="zip-code">
+				<input type="text" placeholder="zip code" id="zip-code" value="" onkeydown="keycheck()" />
+				<button type="submit" onclick="storeZip()"></button>
+				<div class="clear"></div>
+			</div> <!-- end .zip-code -->
+			{% include 'store-zip-search' %}
+			<br /><br />
+			<label>or select a state:</label>
+			{% include 'store-state-search' %}
+		</div> <!-- end .left -->
+		<div class="right">
+			{% include 'store-map-search' %}
+		</div> <!-- end .right -->
+		<div class="clear"></div>
+	</div> <!-- end .store-search -->
+	<div class="store-results">
+		{% include 'store-list' %}
+	</div> <!-- end .store-results -->	
+</div> <!-- end .rte .stores -->
+
+{% capture states %}AL*AK*AZ*AR*CA*CO*CT*DE*FL*GA*HI*ID*IL*IN*IA*KS*KY*LA*ME*MD*MA*MI*MN*MS*MO*MT*NE*NV*NH*NJ*NM*NY*NC*ND*OH*OK*OR*PA*RI*SC*SD*TN*TX*UT*VT*VA*WA*DC*WV*WI*WY*{% endcapture %}
+{% assign states = states | split:'*' %}
+<script>
+	function displayState(state) {
+		{% for state in states %}
+			{% include 'store-state-name' %}
+			document.getElementById('{{ id }}').style.display = 'none';
+		{% endfor %}
+		document.getElementById(state).style.display = 'block';
+		console.log(state);
+	}
+</script>
+
+{% endpaginate %}
