@@ -1,0 +1,81 @@
+<script>
+	function keycheck() {
+		var zipcode = document.getElementById('zip-code').value;
+		if(zipcode.length == 5) {storeZip();}
+	}
+	function storeZip() {
+		var zipcode = document.getElementById('zip-code').value;
+		var two = parseInt(zipcode.substring(0,2));
+		var three = parseInt(zipcode.substring(0,3));
+		var state;
+		
+		if(three > 219 && two < 247) {state = 'virginia';}
+		if(three > 246 && two < 270) {state = 'west-virginia';}
+		if(three > 397 && two < 400) {state = 'georgia';}
+		if(three > 369 && two < 385) {state = 'tennessee';}
+		if(three > 387 && two < 398) {state = 'mississippi';}
+
+		if(three > 699 && two < 716) {state = 'louisiana';}
+		if(three > 715 && two < 730) {state = 'arkansas';}
+		if(three > 819 && two < 832) {state = 'wyoming';}
+		if(three > 833 && two < 840) {state = 'idaho';}
+		if(three > 869 && two < 885) {state = 'new-mexico';}
+		if(three > 888 && two < 900) {state = 'nevada';}
+		if(three > 899 && two < 962) {state = 'california';}
+		if(three > 966 && two < 969) {state = 'hawaii';}
+		if(three > 979 && two < 995) {state = 'washington';}
+		if(three > 994 && two < 1000) {state = 'alaska';}
+		if(three > 9 && two < 28) {state = 'massachusetts';}
+		if(three > 196 && two < 200) {state = 'delaware';}
+		if(three > 27 && two < 30) {state = 'rhode-island';}
+		if(three > 38 && two < 50) {state = 'maine';}
+		if(three > 205 && two < 220) {state = 'maryland';}
+		if(three > 29 && two < 39) {state = 'new-hampshire';}
+		
+		if(three == 5) {state = 'new-york';}
+		if(three == 569 || three == 200) {state = 'washington-dc';}
+		if(three == 885) {state = 'texas';}
+		
+		if(two == 1) {state = 'massachusetts';}
+		if(two == 5) {state = 'vermont';}
+		if(two == 6) {state = 'connecticut';}
+		if(two > 7 && two < 8) {state = 'new-jersey';}
+		if(two > 9 && two < 15) {state = 'new-york';}
+		if(two > 14 && two < 20) {state = 'pennsylvania';}
+		if(two > 19 && two < 24) {state = 'virginia';}
+		if(two > 24 && two < 27) {state = 'west-virginia';}
+		if(two > 26 && two < 29) {state = 'north-carolina';}
+		if(two == 29) {state = 'south-carolina';}
+		if(two > 29 && two < 32) {state = 'georgia';}
+		if(two > 31 && two < 35) {state = 'florida';}
+		if(two > 34 && two < 37) {state = 'alabama';}
+		if(two == 37) {state = 'tennessee';}
+		if(two > 39 && two < 43) {state = 'kentucky';}
+		if(two > 42 && two < 46) {state = 'ohio';}
+		if(two > 45 && two < 48) {state = 'indiana';}
+		if(two > 47 && two < 50) {state = 'michigan';}
+		if(two > 49 && two < 53) {state = 'iowa';}
+		if(two > 52 && two < 55) {state = 'minnesota';}
+		if(two > 54 && two < 57) {state = 'wisconsin';}
+		if(two == 57) {state = 'south-dakota';}
+		if(two == 58) {state = 'north-dakota';}
+		if(two == 59) {state = 'montana';}
+		if(two > 59 && two < 63) {state = 'illinois';}
+		if(two > 62 && two < 66) {state = 'missouri';}
+		if(two > 65 && two < 68) {state = 'kansas';}
+		if(two > 67 && two < 70) {state = 'nebraska';}
+		if(two == 70) {state = 'louisiana';}
+		if(two == 72) {state = 'arkansas';}
+		if(two > 72 && two < 75) {state = 'oklahoma';}
+		if(two > 74 && two < 80) {state = 'texas';}
+		if(two == 82) {state = 'wyoming';}
+		if(two == 84) {state = 'utah';}
+		if(two > 84 && two < 87) {state = 'arizona';}
+		if(two == 87) {state = 'new-mexico';}
+		if(two == 89) {state = 'nevada';}
+		if(two > 89 && two < 96) {state = 'california';}
+		if(two == 97) {state = 'nevada';}
+		if(two == 98) {state = 'washington';}
+		displayState(state);
+	}
+</script>
